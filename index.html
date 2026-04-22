@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ken Joela - Senior Developer</title>
+    
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles & Glassmorphism */
+        body {
+            background-color: #f8fafc;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark body {
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
+        }
+        
+        .dark .glass-panel {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .dark .glass-panel:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Micro-interactions */
+        .btn-hover {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-hover:hover {
+            transform: scale(1.03);
+        }
+        .btn-hover:active {
+            transform: scale(0.97);
+        }
+
+        /* Hide language chunks based on current active lang */
+        html[lang="en"] .lang-ee { display: none !important; }
+        html[lang="ee"] .lang-en { display: none !important; }
+
+        /* Fancy background blobs */
+        .bg-shapes {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .shape-1 {
+            position: absolute;
+            top: -10%; left: -10%;
+            width: 50vw; height: 50vw;
+            min-width: 400px; min-height: 400px;
+            background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, rgba(20,184,166,0) 70%);
+            border-radius: 50%;
+        }
+        .shape-2 {
+            position: absolute;
+            bottom: -20%; right: -10%;
+            width: 60vw; height: 60vw;
+            min-width: 500px; min-height: 500px;
+            background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, rgba(56,189,248,0) 70%);
+            border-radius: 50%;
+            animation-delay: 2s;
+        }
+        .dark .shape-1 { background: radial-gradient(circle, rgba(20,184,166,0.08) 0%, rgba(20,184,166,0) 70%); }
+        .dark .shape-2 { background: radial-gradient(circle, rgba(56,189,248,0.06) 0%, rgba(56,189,248,0) 70%); }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col relative selection:bg-brand-500 selection:text-white font-sans">
+
+    <!-- Decorative Background -->
+    <div class="bg-shapes">
+        <div class="shape-1 animate-blob"></div>
+        <div class="shape-2 animate-blob"></div>
+    </div>
+
+    <!-- Navigation / Controls -->
+    <header class="fixed top-0 w-full z-50 p-4 md:p-6 flex justify-between items-center pointer-events-none">
+        <div class="font-bold text-2xl tracking-tighter pointer-events-auto text-slate-800 dark:text-white drop-shadow-sm transition-colors">
+            KJ.
+        </div>
+        <div class="flex items-center gap-4 pointer-events-auto glass-panel rounded-full px-5 py-2.5">
+            <!-- Social Icons -->
+            <div class="flex items-center gap-3 pr-3 border-r border-slate-300 dark:border-slate-700 transition-colors">
+                <a href="https://github.com" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors" aria-label="GitHub">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors" aria-label="LinkedIn">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            <!-- Language Toggle -->
+            <button id="lang-toggle" class="font-medium text-sm hover:text-brand-500 transition-colors flex items-center gap-1.5 focus:outline-none" aria-label="Toggle Language">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+                <span class="lang-en w-5">EE</span>
+                <span class="lang-ee w-5">EN</span>
+            </button>
+            <div class="w-px h-4 bg-slate-300 dark:bg-slate-600 transition-colors"></div>
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="hover:text-brand-500 transition-colors focus:outline-none flex items-center justify-center w-5 h-5" aria-label="Toggle Dark Mode">
+                <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+                <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 pt-32 pb-32 max-w-5xl space-y-24 md:space-y-32">
+        
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="glass-panel rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 animate-fade-in-up min-h-[50vh]">
+            <div class="flex-grow">
+                <div class="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 text-xs font-bold uppercase tracking-widest w-max border border-brand-200 dark:border-brand-800/50 transition-colors">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                    </span>
+                    <span class="lang-en">Available for new projects</span>
+                    <span class="lang-ee">Avatud uutele projektidele</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-6 text-slate-900 dark:text-white transition-colors leading-[1.1]">
+                    Ken Joela
+                </h1>
+                
+                <h2 class="text-2xl md:text-4xl font-semibold text-slate-600 dark:text-slate-300 mb-8 leading-tight transition-colors max-w-2xl">
+                    <span class="lang-en">Senior Software Architect with 10 years of experience building the modern AI-powered web.</span>
+                    <span class="lang-ee">10-aastase kogemusega tarkvaraarhitekt. Ehitan kaasaegseid ja AI-toega veebilahendusi.</span>
+                </h2>
+                
+                <p class="text-lg text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed transition-colors">
+                    <span class="lang-en">I help businesses scale by delivering high-performance, trustworthy architecture without the technical complexity. Dedicated father, husband, and tech minimalist.</span>
+                    <span class="lang-ee">Aitan ettevõtetel kasvada, luues töökindlaid ja skaleeruvaid süsteeme. Pühendunud isa, abikaasa ja tehnoloogia minimalist.</span>
+                </p>
+            </div>
+            
+            <!-- Profile Image -->
+            <div class="relative shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img src="profile.png" alt="Ken Joela" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT & SERVICES -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-100 transition-colors flex items-center gap-3">
+                    <i data-lucide="user" class="w-8 h-8 text-brand-500"></i>
+                    <span class="lang-en">Who I Am</span>
+                    <span class="lang-ee">Kes ma olen</span>
+                </h3>
+                <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                    <p>
+                        <span class="lang-en">I believe in a user-centered design approach, ensuring that every project I work on is tailored to meet the specific needs of its users. Performance, accessibility, and reliability are my core principles.</span>
+                        <span class="lang-ee">Usun kasutajakesksesse disaini, tagades, et iga projekt on kohandatud vastavalt selle kasutajate vajadustele. Kiirus, ligipääsetavus ja töökindlus on minu põhiväärtused.</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">With a decade in the industry, I've seen technologies come and go. I focus on what works: clean code, scalable architecture, and measurable business results.</span>
+                        <span class="lang-ee">Kümne aasta jooksul olen näinud tehnoloogiate sündi ja hääbumist. Keskendun sellele, mis päriselt töötab: puhas kood, skaleeruv arhitektuur ja mõõdetavad äritulemused.</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="glass-panel rounded-[2rem] p-8 md:p-10 flex flex-col justify-center">
+                <h3 class="text-xl font-bold mb-8 flex items-center gap-2 text-slate-800 dark:text-slate-100 transition-colors">
+                    <i data-lucide="layers" class="w-6 h-6 text-brand-500"></i>
+                    <span class="lang-en">Services</span>
+                    <span class="lang-ee">Teenused</span>
+                </h3>
+                <ul class="space-y-5 text-slate-600 dark:text-slate-300 font-semibold transition-colors">
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="monitor" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="lang-en">Full-Stack Web Development</p>
+                            <p class="lang-ee">Täislahendusega veebiarendus</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="lang-en">Mobile App Development</p>
+                            <p class="lang-ee">Mobiilirakenduste arendus</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="lang-en">AI Integration & Automation</p>
+                            <p class="lang-ee">AI liidestused ja automatiseerimine</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. EXPERIENCE SECTION -->
+        <section id="experience" class="animate-fade-in-up" style="animation-delay: 0.2s;">
+            <h3 class="text-3xl font-bold mb-12 text-center text-slate-800 dark:text-slate-100 transition-colors">
+                <span class="lang-en">Professional Journey</span>
+                <span class="lang-ee">Töökäik</span>
+            </h3>
+            
+            <div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-700 before:to-transparent">
+                
+                <!-- Experience Item 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-brand-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">Senior Software Engineer</div>
+                            <time class="font-mono text-xs font-semibold text-brand-500 uppercase">2020 - Present</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Almic OÜ</div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Leading the development of complex enterprise-level web applications. Architecture design, AI integration, and mentoring.</span>
+                            <span class="lang-ee">Keeruliste ettevõtte tasandi veebirakenduste arendus. Arhitektuuri disain, AI liidestamine ja meeskonna juhendamine.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="code" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">Full-Stack Developer</div>
+                            <time class="font-mono text-xs font-semibold text-slate-400 uppercase">2016 - 2020</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Freelance / Agencies</div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Developed dozens of high-performance websites and custom CMS solutions for various local and international clients.</span>
+                            <span class="lang-ee">Loin kümneid veebilahendusi ja erilahendustega sisuhaldussüsteeme kohalikele ja rahvusvahelistele klientidele.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="terminal" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">Web Developer</div>
+                            <time class="font-mono text-xs font-semibold text-slate-400 uppercase">2014 - 2016</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Early Career</div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Started my journey with HTML, CSS, and PHP, building the foundation for a decade of engineering excellence.</span>
+                            <span class="lang-ee">Alustasin oma teekonda HTML, CSS ja PHP-ga, pannes aluse kümnele aastale inseneritööle.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SKILLS & TECH -->
+        <section id="tech" class="glass-panel rounded-[2rem] p-10 md:p-16 animate-fade-in-up" style="animation-delay: 0.3s;">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1">
+                    <h3 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-100 transition-colors">
+                        <span class="lang-en">My Stack</span>
+                        <span class="lang-ee">Tehnoloogiad</span>
+                    </h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+                        <span class="lang-en">I use modern, battle-tested tools to build scalable applications. Each technology is chosen for its reliability and performance.</span>
+                        <span class="lang-ee">Kasutan kaasaegseid ja testitud tööriistu skaleeruvate rakenduste loomiseks. Iga tehnoloogia on valitud selle töökindluse ja jõudluse tõttu.</span>
+                    </p>
+                    <div class="p-6 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-600 dark:text-brand-400 font-medium">
+                        <span class="lang-en">"Building for the future with the best tools of today."</span>
+                        <span class="lang-ee">"Ehitan tuleviku jaoks tänapäeva parimate tööriistadega."</span>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <h4 class="text-sm font-bold uppercase tracking-widest text-brand-500 flex items-center gap-2">
+                            <i data-lucide="layout" class="w-4 h-4"></i>
+                            Frontend
+                        </h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="atom" class="w-4 h-4 text-[#61DAFB]"></i> React / Next.js
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="code-2" class="w-4 h-4 text-[#3178C6]"></i> TypeScript
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="wind" class="w-4 h-4 text-[#38B2AC]"></i> Tailwind CSS
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="move" class="w-4 h-4 text-[#FF0055]"></i> Framer Motion
+                            </span>
+                        </div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest text-brand-500 pt-4 flex items-center gap-2">
+                            <i data-lucide="database" class="w-4 h-4"></i>
+                            Backend
+                        </h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="server" class="w-4 h-4 text-[#FF2D20]"></i> Laravel / PHP
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="database" class="w-4 h-4 text-[#336791]"></i> PostgreSQL / MySQL
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="zap" class="w-4 h-4 text-[#D22B21]"></i> Redis
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="share-2" class="w-4 h-4 text-slate-400"></i> REST & GraphQL
+                            </span>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="text-sm font-bold uppercase tracking-widest text-brand-500 flex items-center gap-2">
+                            <i data-lucide="terminal" class="w-4 h-4"></i>
+                            Workflow & Ops
+                        </h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="box" class="w-4 h-4 text-[#2496ED]"></i> Docker / CI/CD
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="cloud" class="w-4 h-4 text-slate-400"></i> AWS / Vercel
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="git-branch" class="w-4 h-4 text-[#F05032]"></i> Git / GitHub
+                            </span>
+                        </div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest text-brand-500 pt-4 flex items-center gap-2">
+                            <i data-lucide="smile" class="w-4 h-4"></i>
+                            Soft Skills
+                        </h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="target" class="w-4 h-4 text-slate-400"></i> Product Strategy
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="users" class="w-4 h-4 text-slate-400"></i> Mentoring
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium transition-colors hover:border-brand-300 dark:hover:border-brand-700">
+                                <i data-lucide="command" class="w-4 h-4 text-slate-400"></i> Agile Leadership
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PROJECTS -->
+        <section id="projects" class="animate-fade-in-up" style="animation-delay: 0.4s;">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-black mb-4 text-slate-800 dark:text-slate-100 transition-colors">
+                    <span class="lang-en">Featured Work</span>
+                    <span class="lang-ee">Valitud tööd</span>
+                </h3>
+                <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium">
+                    <span class="lang-en">A selection of projects where I've had a key role in engineering and architecture.</span>
+                    <span class="lang-ee">Valik projekte, kus olen mänginud olulist rolli tehnilises teostuses ja arhitektuuris.</span>
+                </p>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Project 1 -->
+                <div class="group relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center glass-panel p-8 md:p-12 rounded-[2.5rem] overflow-hidden">
+                    <div class="order-2 md:order-1">
+                        <h4 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">digitalforall.eu</h4>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-lg">
+                            <span class="lang-en">A pioneering platform for digital accessibility. Built with high-performance metrics and inclusive design at its core.</span>
+                            <span class="lang-ee">Teerajaja platvorm digitaalse ligipääsetavuse valdkonnas. Loodud fookusega jõudlusele ja kaasavale disainile.</span>
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Next.js</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Tailwind</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">A11y</span>
+                        </div>
+                        <a href="https://digitalforall.eu" target="_blank" class="inline-flex items-center gap-2 font-bold text-brand-600 dark:text-brand-400 hover:gap-4 transition-all">
+                            <span class="lang-en">View Project</span>
+                            <span class="lang-ee">Vaata projekti</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-2 relative aspect-video rounded-2xl bg-slate-200 dark:bg-slate-800 overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-transparent"></div>
+                        <div class="flex items-center justify-center h-full text-slate-400 font-black text-4xl italic opacity-20">DIGITAL FOR ALL</div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center glass-panel p-8 md:p-12 rounded-[2.5rem] overflow-hidden">
+                    <div class="order-2 md:order-2">
+                        <h4 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">taotlused.epikoda.ee</h4>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-lg">
+                            <span class="lang-en">Custom application portal handling sensitive data with robust security and a streamlined user journey.</span>
+                            <span class="lang-ee">Eritellimusel valminud taotluste portaal, mis käsitleb tundlikke andmeid turvaliselt ja sujuva kasutajateekonnaga.</span>
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Laravel</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Vue.js</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">PostgreSQL</span>
+                        </div>
+                        <a href="https://taotlused.epikoda.ee" target="_blank" class="inline-flex items-center gap-2 font-bold text-brand-600 dark:text-brand-400 hover:gap-4 transition-all">
+                            <span class="lang-en">View Project</span>
+                            <span class="lang-ee">Vaata projekti</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-1 relative aspect-video rounded-2xl bg-slate-200 dark:bg-slate-800 overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-transparent"></div>
+                        <div class="flex items-center justify-center h-full text-slate-400 font-black text-4xl italic opacity-20">EPIKODA</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT -->
+        <section id="contact" class="glass-panel rounded-[3rem] p-12 md:p-20 bg-gradient-to-br from-brand-500 to-brand-600 text-white animate-fade-in-up" style="animation-delay: 0.5s;">
+            <div class="max-w-3xl">
+                <h3 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+                    <span class="lang-en">Ready to build something legendary?</span>
+                    <span class="lang-ee">Valmis looma midagi legendaarset?</span>
+                </h3>
+                <p class="text-brand-100 text-xl mb-12 font-medium">
+                    <span class="lang-en">Currently accepting new projects and consulting inquiries.</span>
+                    <span class="lang-ee">Olen avatud uutele projektidele ja konsultatsioonidele.</span>
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-6">
+                    <a href="mailto:ken.joela@example.com" class="px-8 py-5 bg-white text-brand-600 rounded-2xl font-black text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all">
+                        <span class="lang-en">Get in touch</span>
+                        <span class="lang-ee">Võta ühendust</span>
+                    </a>
+                    
+                    <div class="flex gap-4">
+                        <a href="https://github.com" target="_blank" class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors border border-white/20" aria-label="GitHub">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors border border-white/20" aria-label="LinkedIn">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-8 text-center text-sm font-medium text-slate-500 dark:text-slate-500 pointer-events-none transition-colors">
+        <p>&copy; <span id="year"></span> Ken Joela. <span class="lang-en">All rights reserved.</span><span class="lang-ee">Kõik õigused kaitstud.</span></p>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Check Local Storage or System Preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Language Toggle Logic
+        const langToggleBtn = document.getElementById('lang-toggle');
+        
+        // Check Local Storage or default to 'ee' (since user is from Estonia, maybe default to EE, but let's stick to EE as default if missing, or EN. The prompt asks for toggle, I'll default to 'ee' based on target audience)
+        let currentLang = localStorage.getItem('language') || 'ee';
+        htmlElement.setAttribute('lang', currentLang);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ee' : 'en';
+            htmlElement.setAttribute('lang', currentLang);
+            localStorage.setItem('language', currentLang);
+        });
+    </script>
+</body>
+</html>
