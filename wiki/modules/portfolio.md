@@ -2,7 +2,7 @@
 title: Portfolio Module
 updated: 2026-04-23
 sources: ["index.html"]
-source_commit: be5926b
+source_commit: eee1db3
 confidence: high
 ---
 
@@ -39,6 +39,8 @@ Tailwind's `dark` class strategy is used.
 - Glassmorphism effects (`glass-panel` class) adjust their opacity and borders based on the theme.
 
 ### 3. Visual Polish
+- **Animated Gradient Headers**: Section headers use a dynamic multi-color gradient (`gradient-text`) with a continuous shimmer animation.
+- **Dot-Grid Background**: A subtle, high-end dot-grid pattern is applied to the background to enhance the technical aesthetic.
 - **Glassmorphism**: Accomplished via `backdrop-filter: blur(12px)` and semi-transparent backgrounds.
 - **Animations**: Custom Tailwind animations for floating background blobs (`animate-blob`) and section entry transitions (`animate-fade-in-up`).
 - **Icons**: Dynamic SVG injection using Lucide Icons.

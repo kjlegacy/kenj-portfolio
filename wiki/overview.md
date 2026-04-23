@@ -2,7 +2,7 @@
 title: Project Overview
 updated: 2026-04-23
 sources: [".agents/README.md", "index.html"]
-source_commit: be5926b
+source_commit: eee1db3
 confidence: high
 ---
 
@@ -26,5 +26,5 @@ This project is a high-end personal portfolio for **Ken Joela**, a Senior Develo
 ## Key Features
 
 - **Bilingual Support**: Dynamic language switching between Estonian and English without page reloads.
-- **Visual Excellence**: Bento-grid design, glassmorphism effects, smooth animations, and a dark/light mode toggle.
+- **Visual Excellence**: Bento-grid design, animated gradient headers, dot-grid background patterns, glassmorphism effects, and smooth transitions.
 - **Living Wiki**: A documentation system that stays in sync with code changes via automated sync operations.
