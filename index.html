@@ -32,6 +32,7 @@
                     animation: {
                         'blob': 'blob 7s infinite',
                         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'shimmer': 'shimmer 3s linear infinite',
                     },
                     keyframes: {
                         blob: {
@@ -43,6 +44,10 @@
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
                         }
                     }
                 }
@@ -111,6 +116,25 @@
             overflow: hidden;
             pointer-events: none;
         }
+        
+        /* Dot grid pattern */
+        .dot-grid {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .dark .dot-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #14b8a6, #3b82f6, #a855f7, #14b8a6);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 6s linear infinite;
+        }
+
         .shape-1 {
             position: absolute;
             top: -10%; left: -10%;
@@ -135,7 +159,7 @@
 <body class="text-slate-800 antialiased min-h-screen flex flex-col relative selection:bg-brand-500 selection:text-white font-sans">
 
     <!-- Decorative Background -->
-    <div class="bg-shapes">
+    <div class="bg-shapes dot-grid">
         <div class="shape-1 animate-blob"></div>
         <div class="shape-2 animate-blob"></div>
     </div>
@@ -184,8 +208,8 @@
                     <span class="lang-ee">Avatud uutele projektidele</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-6 text-slate-900 dark:text-white transition-colors leading-[1.1]">
-                    Ken Joela
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-6 text-slate-900 dark:text-white transition-colors leading-[1.1]">
+                    <span class="gradient-text">Ken Joela</span>
                 </h1>
                 
                 <h2 class="text-2xl md:text-4xl font-semibold text-slate-600 dark:text-slate-300 mb-8 leading-tight transition-colors max-w-2xl">
@@ -209,10 +233,12 @@
         <!-- 2. ABOUT & SERVICES -->
         <section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="flex flex-col justify-center">
-                <h3 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-100 transition-colors flex items-center gap-3">
-                    <i data-lucide="user" class="w-8 h-8 text-brand-500"></i>
-                    <span class="lang-en">Who I Am</span>
-                    <span class="lang-ee">Kes ma olen</span>
+                <h3 class="text-4xl font-black mb-6 text-slate-800 dark:text-slate-100 transition-colors flex items-center gap-3">
+                    <i data-lucide="user" class="w-10 h-10 text-brand-500"></i>
+                    <span class="gradient-text">
+                        <span class="lang-en">Who I Am</span>
+                        <span class="lang-ee">Kes ma olen</span>
+                    </span>
                 </h3>
                 <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
                     <p>
@@ -266,9 +292,11 @@
 
         <!-- 3. EXPERIENCE SECTION -->
         <section id="experience" class="animate-fade-in-up" style="animation-delay: 0.2s;">
-            <h3 class="text-3xl font-bold mb-12 text-center text-slate-800 dark:text-slate-100 transition-colors">
-                <span class="lang-en">Professional Journey</span>
-                <span class="lang-ee">Töökäik</span>
+            <h3 class="text-4xl font-black mb-12 text-center text-slate-800 dark:text-slate-100 transition-colors">
+                <span class="gradient-text">
+                    <span class="lang-en">Professional Journey</span>
+                    <span class="lang-ee">Töökäik</span>
+                </span>
             </h3>
             
             <div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-700 before:to-transparent">
@@ -333,9 +361,11 @@
         <section id="tech" class="glass-panel rounded-[2rem] p-10 md:p-16 animate-fade-in-up" style="animation-delay: 0.3s;">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div class="lg:col-span-1">
-                    <h3 class="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-100 transition-colors">
-                        <span class="lang-en">My Stack</span>
-                        <span class="lang-ee">Tehnoloogiad</span>
+                    <h3 class="text-4xl font-black mb-6 text-slate-800 dark:text-slate-100 transition-colors">
+                        <span class="gradient-text">
+                            <span class="lang-en">My Stack</span>
+                            <span class="lang-ee">Tehnoloogiad</span>
+                        </span>
                     </h3>
                     <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
                         <span class="lang-en">I use modern, battle-tested tools to build scalable applications. Each technology is chosen for its reliability and performance.</span>
@@ -425,9 +455,11 @@
         <!-- 5. PROJECTS -->
         <section id="projects" class="animate-fade-in-up" style="animation-delay: 0.4s;">
             <div class="text-center mb-16">
-                <h3 class="text-4xl font-black mb-4 text-slate-800 dark:text-slate-100 transition-colors">
-                    <span class="lang-en">Featured Work</span>
-                    <span class="lang-ee">Valitud tööd</span>
+                <h3 class="text-5xl font-black mb-4 text-slate-800 dark:text-slate-100 transition-colors">
+                    <span class="gradient-text">
+                        <span class="lang-en">Featured Work</span>
+                        <span class="lang-ee">Valitud tööd</span>
+                    </span>
                 </h3>
                 <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium">
                     <span class="lang-en">A selection of projects where I've had a key role in engineering and architecture.</span>
@@ -491,9 +523,11 @@
         <!-- 6. CONTACT -->
         <section id="contact" class="glass-panel rounded-[3rem] p-12 md:p-20 bg-gradient-to-br from-brand-500 to-brand-600 text-white animate-fade-in-up" style="animation-delay: 0.5s;">
             <div class="max-w-3xl">
-                <h3 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
-                    <span class="lang-en">Ready to build something legendary?</span>
-                    <span class="lang-ee">Valmis looma midagi legendaarset?</span>
+                <h3 class="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-[1.1]">
+                    <span class="gradient-text">
+                        <span class="lang-en">Ready to build something legendary?</span>
+                        <span class="lang-ee">Valmis looma midagi legendaarset?</span>
+                    </span>
                 </h3>
                 <p class="text-brand-100 text-xl mb-12 font-medium">
                     <span class="lang-en">Currently accepting new projects and consulting inquiries.</span>
