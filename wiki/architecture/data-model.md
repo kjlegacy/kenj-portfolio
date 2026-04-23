@@ -1,6 +1,7 @@
 ---
 title: Data Model
-updated: 2026-04-22
+updated: 2026-04-23
+source_commit: be5926b
 confidence: high
 ---
 

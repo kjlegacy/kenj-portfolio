@@ -1,0 +1,13 @@
+# Graphify temporary files
+.graphify_detect.json
+.graphify_detect_utf8.json
+.graphify_python
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: if you ever use npm
+node_modules/
+dist/
+.env
