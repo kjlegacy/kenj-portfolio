@@ -23,3 +23,8 @@ All significant changes to the wiki are recorded here.
 - Changed files: index.html
 - Pages updated: modules/portfolio.md, overview.md
 - Follow-ups: none. Documented new animated gradient headers and dot-grid background effects.
+
+## [2026-04-23] sync | 1 page updated
+- Changed files: index.html
+- Pages updated: modules/portfolio.md
+- Follow-ups: none. Refined headers with a "Nordic Gray" palette for significantly better readability and professional feel.
