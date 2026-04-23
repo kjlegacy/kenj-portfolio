@@ -27,4 +27,6 @@ All significant changes to the wiki are recorded here.
 ## [2026-04-23] sync | 1 page updated
 - Changed files: index.html
 - Pages updated: modules/portfolio.md
-- Follow-ups: none. Refined headers with a "Nordic Gray" palette for significantly better readability and professional feel.
+- Follow-ups: none. Updated GitHub and LinkedIn URLs to personal profiles and removed the X (Twitter) integration from header/footer.
+
+

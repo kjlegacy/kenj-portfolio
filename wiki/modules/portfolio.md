@@ -42,11 +42,16 @@ Tailwind's `dark` class strategy is used.
 - **Animated Nordic Headers**: Section headers use a sophisticated "Nordic Gray" (Slate) gradient with a subtle shimmer animation for improved readability and a premium feel.
 - **Dot-Grid Background**: A subtle, high-end dot-grid pattern is applied to the background to enhance the technical aesthetic.
 - **Glassmorphism**: Accomplished via `backdrop-filter: blur(12px)` and semi-transparent backgrounds.
-- **Animations**: Custom Tailwind animations for floating background blobs (`animate-blob`) and section entry transitions (`animate-fade-in-up`).
+- **Animations**: Custom Tailwind animations for floating background blobs (`animate-blob`), section entry transitions (`animate-fade-in-up`), and thumbnail hover interactions (skew/scale).
 - **Icons**: Dynamic SVG injection using Lucide Icons.
+
+### 4. Interactive Project Galleries
+- **Expandable List**: Projects list initially shows 4 top items, with the rest hidden behind a "Vaata veel" (View More) button.
+- **Image Lightbox**: Clicking a project thumbnail opens a mobile-friendly, swipeable image gallery using `GLightbox`.
 
 ## Dependencies
 
 - **Tailwind CSS**: Utility-first styling framework (via CDN).
 - **Lucide Icons**: Open-source icon library.
 - **Google Fonts (Inter)**: Modern sans-serif typography.
+- **GLightbox**: Lightweight, pure JavaScript lightbox plugin for project image galleries.
