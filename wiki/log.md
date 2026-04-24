@@ -47,4 +47,7 @@ All significant changes to the wiki are recorded here.
 ## [2026-04-24] sync | 6 pages updated
 - Changed files: index.html, assets/favicon.svg
 - Pages updated: overview.md, modules/portfolio.md, glossary.md, SCHEMA.md, architecture/data-model.md, architecture/decisions.md
-- Follow-ups: none. Synchronized all pages with latest commit aae3c34. Documented mobile gallery fixes and favicon implementation.
+## [2026-04-24] sync | 3 pages updated
+- Changed files: index.html
+- Pages updated: overview.md, modules/portfolio.md, log.md
+- Follow-ups: none. Synchronized pages with commit c293b83. Documented fixes for mobile gallery layout and scroll-reveal animation triggers.
