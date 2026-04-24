@@ -68,3 +68,7 @@ All significant changes to the wiki are recorded here.
 - Changed files: index.html
 - Pages updated: overview.md, modules/portfolio.md, log.md
 - Follow-ups: none. Synchronized pages with commit 0221cc1. Restored the large "Ken Jõela" name title in the hero section with a minimalist, color-cycling blue gradient animation.
+## [2026-04-24] sync | 2 pages updated
+- Changed files: 0 (metadata alignment)
+- Pages updated: overview.md, modules/portfolio.md, log.md
+- Follow-ups: none. Synchronized pages with commit fc83d69.
