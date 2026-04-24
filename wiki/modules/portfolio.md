@@ -2,7 +2,7 @@
 title: Portfolio Module
 updated: 2026-04-24
 sources: ["index.html", "assets/favicon.svg"]
-source_commit: 87b1de3
+source_commit: fb0bbdb
 confidence: high
 ---
 

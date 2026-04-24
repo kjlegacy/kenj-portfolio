@@ -56,4 +56,7 @@ All significant changes to the wiki are recorded here.
 ## [2026-04-24] sync | 3 pages updated
 - Changed files: index.html
 - Pages updated: overview.md, modules/portfolio.md, log.md
-- Follow-ups: none. Synchronized pages with commit 87b1de3. Converted all brand copy from plural (we/loome) to singular (I/loon) for a more personal solo developer tone.
+## [2026-04-24] sync | 3 pages updated
+- Changed files: index.html
+- Pages updated: overview.md, modules/portfolio.md, log.md
+- Follow-ups: none. Synchronized pages with commit fb0bbdb. Translated technology stack to Estonian and added personal details (father, husband) to About section.
