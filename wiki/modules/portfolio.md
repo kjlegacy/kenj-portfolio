@@ -2,7 +2,7 @@
 title: Portfolio Module
 updated: 2026-04-24
 sources: ["index.html", "assets/favicon.svg"]
-source_commit: fb0bbdb
+source_commit: 49df100
 confidence: high
 ---
 
@@ -52,7 +52,8 @@ Tailwind's `dark` class strategy is used.
 ### 4. Interactive Project Galleries
 - **Expandable List**: Projects list initially shows 4 top items, with the rest hidden behind a "Vaata veel" (View More) button.
 - **Image Lightbox**: Clicking a project thumbnail opens a mobile-friendly, swipeable image gallery using `GLightbox`.
-    - **Mobile Optimization**: Implemented `dvh` (Dynamic Viewport Height) and `safe-area-inset` CSS to ensure the gallery is fully responsive and the close button remains accessible on iPhones with notches and dynamic browser bars.
+    - **Mobile Optimization**: Implemented `dvh` (Dynamic Viewport Height) and `safe-area-inset` CSS to ensure the gallery is fully responsive and the close button remains accessible.
+    - **Click-to-Close**: Enhanced user experience by allowing users to close the gallery by clicking anywhere on the background or slide wrapper, improving navigation speed on mobile.
 
 ### 5. Contact Form Integration
 - **Web3Forms**: Handles form submissions without a backend server.

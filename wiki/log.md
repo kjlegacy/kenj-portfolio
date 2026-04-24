@@ -60,3 +60,7 @@ All significant changes to the wiki are recorded here.
 - Changed files: index.html
 - Pages updated: overview.md, modules/portfolio.md, log.md
 - Follow-ups: none. Synchronized pages with commit fb0bbdb. Translated technology stack to Estonian and added personal details (father, husband) to About section.
+## [2026-04-24] sync | 3 pages updated
+- Changed files: index.html
+- Pages updated: overview.md, modules/portfolio.md, log.md
+- Follow-ups: none. Synchronized pages with commit 49df100. Implemented "click-outside-to-close" behavior for GLightbox to improve mobile UX.
