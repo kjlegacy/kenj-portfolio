@@ -1,7 +1,7 @@
 ---
 title: Glossary
 updated: 2026-04-24
-source_commit: b47b228
+source_commit: aae3c34
 confidence: high
 ---
 

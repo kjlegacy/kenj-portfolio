@@ -44,7 +44,7 @@ All significant changes to the wiki are recorded here.
 - Changed files: index.html, assets/favicon.svg
 - Pages updated: none
 
-## [2026-04-24] sync | 1 page updated
-- Changed files: index.html
-- Pages updated: modules/portfolio.md
-- Follow-ups: none. Implemented dynamic viewport height (dvh) and safe-area-insets for GLightbox to fix mobile layout issues on iOS.
+## [2026-04-24] sync | 6 pages updated
+- Changed files: index.html, assets/favicon.svg
+- Pages updated: overview.md, modules/portfolio.md, glossary.md, SCHEMA.md, architecture/data-model.md, architecture/decisions.md
+- Follow-ups: none. Synchronized all pages with latest commit aae3c34. Documented mobile gallery fixes and favicon implementation.
