@@ -39,3 +39,8 @@ All significant changes to the wiki are recorded here.
 - Changed files: index.html
 - Pages updated: modules/portfolio.md, overview.md
 - Follow-ups: none. Implemented the smart header with "Let's Talk" CTA, scroll-to-top logo, and scroll-to-hide behavior. Linked hero badge to contact section.
+
+## [2026-04-24] sync | 0 pages updated
+- Changed files: index.html, assets/favicon.svg
+- Pages updated: none
+- Follow-ups: none. Implemented a clean, dark "KJ." monogram favicon in SVG format on a transparent background.
