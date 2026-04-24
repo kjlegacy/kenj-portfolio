@@ -50,4 +50,7 @@ All significant changes to the wiki are recorded here.
 ## [2026-04-24] sync | 3 pages updated
 - Changed files: index.html
 - Pages updated: overview.md, modules/portfolio.md, log.md
-- Follow-ups: none. Synchronized pages with commit c293b83. Documented fixes for mobile gallery layout and scroll-reveal animation triggers.
+## [2026-04-24] sync | 3 pages updated
+- Changed files: index.html
+- Pages updated: overview.md, modules/portfolio.md, log.md
+- Follow-ups: none. Synchronized pages with commit d80551b. Implemented "Lore & Logic" B2B copywriting, SEO optimizations, and dynamic title switching.

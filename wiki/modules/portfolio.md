@@ -2,13 +2,13 @@
 title: Portfolio Module
 updated: 2026-04-24
 sources: ["index.html", "assets/favicon.svg"]
-source_commit: c293b83
+source_commit: d80551b
 confidence: high
 ---
 
 # Portfolio Module
 
-The Portfolio module is the primary user-facing component of the repository. It is contained within a single `index.html` file to maximize portability and performance for a one-page site.
+The Portfolio module is the primary user-facing component of the repository, serving as the business site for **Lore & Logic OÜ**. It is contained within a single `index.html` file to maximize portability and performance for a one-page site.
 
 ## Architecture
 

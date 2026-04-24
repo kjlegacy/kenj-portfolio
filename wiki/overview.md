@@ -2,13 +2,13 @@
 title: Project Overview
 updated: 2026-04-24
 sources: [".agents/README.md", "index.html"]
-source_commit: c293b83
+source_commit: d80551b
 confidence: high
 ---
 
 # Project Overview
 
-This project is a high-end personal portfolio for **Ken Joela**, a Senior Developer from Estonia. It is designed to demonstrate both expert frontend engineering (via the portfolio itself) and modern AI-driven codebase maintenance (via the LLM Wiki pattern).
+This project is a high-end personal portfolio and business landing page for **Ken Jõela**, founder of **Lore & Logic OÜ**. It is designed to demonstrate both expert frontend engineering (via the portfolio itself) and modern AI-driven codebase maintenance (via the LLM Wiki pattern).
 
 ## Core Concepts
 
