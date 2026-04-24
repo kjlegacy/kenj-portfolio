@@ -2,7 +2,7 @@
 title: Project Overview
 updated: 2026-04-24
 sources: [".agents/README.md", "index.html"]
-source_commit: fc83d69
+source_commit: 132ff38
 confidence: high
 ---
 
@@ -20,6 +20,7 @@ This project is a high-end personal portfolio and business landing page for **Ke
 
 - **Frontend**: HTML5, Tailwind CSS (via CDN), Vanilla JavaScript.
 - **Iconography**: Lucide Icons.
+- **Analytics**: Umami Cloud (Privacy-first).
 - **Documentation**: Markdown, Mermaid.js (for diagrams).
 - **Agent Tooling**: Antigravity (Skills, Workflows, Rules).
 
@@ -28,4 +29,5 @@ This project is a high-end personal portfolio and business landing page for **Ke
 - **Bilingual Support**: Dynamic language switching between Estonian and English, including form placeholders.
 - **Visual Excellence**: Bento-grid design, animated gradient headers, dot-grid background patterns, glassmorphism effects, and scroll-reveal animations.
 - **Interactivity**: Mobile-friendly project galleries via GLightbox, smooth "Back to Top" navigation, and a functional contact form integrated with Web3Forms.
+- **Analytics**: Real-time, privacy-focused visitor tracking via Umami Cloud.
 - **Living Wiki**: A documentation system that stays in sync with code changes via automated sync operations.

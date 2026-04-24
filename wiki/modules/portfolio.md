@@ -2,7 +2,7 @@
 title: Portfolio Module
 updated: 2026-04-24
 sources: ["index.html", "assets/favicon.svg"]
-source_commit: fc83d69
+source_commit: 132ff38
 confidence: high
 ---
 
@@ -59,6 +59,9 @@ Tailwind's `dark` class strategy is used.
 - **Web3Forms**: Handles form submissions without a backend server.
 - **User Experience**: Includes loading states, success messages, and bilingual placeholder support.
 
+### 6. Visitor Analytics
+- **Umami Cloud**: A privacy-focused, cookie-less analytics solution used to track page views and visitor engagement without compromising user privacy or requiring a GDPR consent banner.
+
 ## Dependencies
 
 - **Tailwind CSS**: Utility-first styling framework (via CDN).
@@ -66,3 +69,4 @@ Tailwind's `dark` class strategy is used.
 - **Google Fonts (Inter)**: Modern sans-serif typography.
 - **GLightbox**: Lightweight, pure JavaScript lightbox plugin for project image galleries.
 - **Favicon**: A professional "KJ." monogram in SVG format, optimized for all devices and themes.
+- **Umami Cloud**: Privacy-first website analytics.

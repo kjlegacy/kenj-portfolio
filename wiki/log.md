@@ -72,3 +72,8 @@ All significant changes to the wiki are recorded here.
 - Changed files: 0 (metadata alignment)
 - Pages updated: overview.md, modules/portfolio.md, log.md
 - Follow-ups: none. Synchronized pages with commit fc83d69.
+
+## [2026-04-24] sync | 3 pages updated
+- Changed files: index.html
+- Pages updated: overview.md, modules/portfolio.md, log.md
+- Follow-ups: none. Synchronized pages with commit 132ff38. Integrated Umami Cloud analytics for privacy-focused visitor tracking.
