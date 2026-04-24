@@ -29,4 +29,9 @@ All significant changes to the wiki are recorded here.
 - Pages updated: modules/portfolio.md
 - Follow-ups: none. Updated GitHub and LinkedIn URLs to personal profiles and removed the X (Twitter) integration from header/footer.
 
+## [2026-04-24] sync | 7 pages updated
+- Changed files: index.html
+- Pages updated: overview.md, modules/portfolio.md, glossary.md, SCHEMA.md, index.md, data-model.md, decisions.md
+- Follow-ups: none. Documented the new contact form (Web3Forms), back-to-top button, and scroll-reveal system.
+
 

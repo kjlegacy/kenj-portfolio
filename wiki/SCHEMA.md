@@ -1,7 +1,7 @@
 ---
 title: Wiki Schema
-updated: 2026-04-23
-source_commit: be5926b
+updated: 2026-04-24
+source_commit: b47b228
 confidence: high
 ---
 

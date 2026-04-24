@@ -1,8 +1,8 @@
 ---
 title: Portfolio Module
-updated: 2026-04-23
+updated: 2026-04-24
 sources: ["index.html"]
-source_commit: 2d11b55
+source_commit: b47b228
 confidence: high
 ---
 
@@ -21,8 +21,9 @@ The page is built using a **Bento Grid** layout, which organizes information int
 | **Hero Section** | Displays name, senior-level hooks in two languages, and background blobs. |
 | **Services** | Highlights core offerings (Web, Mobile, Backend). |
 | **Skills** | Categorized list of technical proficiencies. |
-| **Projects** | Links to featured works (e.g., digitalforall.eu). |
-| **Contact** | Call-to-action buttons and social links. |
+| **Projects** | Links to featured works with expandable "See More" functionality and GLightbox galleries. |
+| **Contact** | Bilingual contact form with Web3Forms integration and social links. |
+| **Back to Top** | Floating button for smooth navigation to the hero section. |
 
 ## Features & Implementation
 
@@ -42,12 +43,17 @@ Tailwind's `dark` class strategy is used.
 - **Animated Nordic Headers**: Section headers use a sophisticated "Nordic Gray" (Slate) gradient with a subtle shimmer animation for improved readability and a premium feel.
 - **Dot-Grid Background**: A subtle, high-end dot-grid pattern is applied to the background to enhance the technical aesthetic.
 - **Glassmorphism**: Accomplished via `backdrop-filter: blur(12px)` and semi-transparent backgrounds.
-- **Animations**: Custom Tailwind animations for floating background blobs (`animate-blob`), section entry transitions (`animate-fade-in-up`), and thumbnail hover interactions (skew/scale).
+- **Animations**: Custom Tailwind animations for floating background blobs (`animate-blob`), section entry transitions, and thumbnail hover interactions.
+- **Scroll Reveal**: Uses a dedicated Intersection Observer-based system (`.reveal` class) for smooth entry animations as the user scrolls.
 - **Icons**: Dynamic SVG injection using Lucide Icons.
 
 ### 4. Interactive Project Galleries
 - **Expandable List**: Projects list initially shows 4 top items, with the rest hidden behind a "Vaata veel" (View More) button.
 - **Image Lightbox**: Clicking a project thumbnail opens a mobile-friendly, swipeable image gallery using `GLightbox`.
+
+### 5. Contact Form Integration
+- **Web3Forms**: Handles form submissions without a backend server.
+- **User Experience**: Includes loading states, success messages, and bilingual placeholder support.
 
 ## Dependencies
 

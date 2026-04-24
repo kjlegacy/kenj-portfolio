@@ -1,7 +1,7 @@
 ---
 title: Glossary
-updated: 2026-04-23
-source_commit: be5926b
+updated: 2026-04-24
+source_commit: b47b228
 confidence: high
 ---
 
@@ -23,3 +23,6 @@ A metric used in the wiki to indicate how likely the documentation matches the c
 - **High**: Recently verified against the exact source commit.
 - **Medium**: Source files have changed slightly since last verification.
 - **Low**: Source files have changed significantly; re-verification needed.
+
+### Web3Forms
+A serverless form processing service used to handle contact form submissions via AJAX without requiring a custom backend.

@@ -326,47 +326,65 @@
     </div>
 
     <!-- Navigation / Controls -->
-    <header class="fixed top-0 w-full z-50 p-4 md:p-6 flex justify-between items-center pointer-events-none">
-        <div
-            class="font-bold text-2xl tracking-tighter pointer-events-auto text-slate-800 dark:text-white drop-shadow-sm transition-colors">
-            KJ.
-        </div>
-        <div class="flex items-center gap-4 pointer-events-auto glass-panel rounded-full px-5 py-2.5">
-            <!-- Social Icons -->
-            <div class="flex items-center gap-3 pr-3 border-r border-slate-300 dark:border-slate-700 transition-colors">
-                <a href="https://github.com/kjlegacy" target="_blank"
-                    class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors"
-                    aria-label="GitHub">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
+    <header id="main-header"
+        class="fixed top-0 w-full z-50 p-4 md:p-6 pointer-events-none transition-transform duration-500 ease-in-out">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <!-- Left Side: Logo -->
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="glass-panel rounded-full px-5 py-2.5 pointer-events-auto font-bold text-2xl tracking-tighter text-slate-800 dark:text-white drop-shadow-sm transition-colors btn-hover focus:outline-none">
+                KJ.
+            </button>
+
+            <!-- Right Side: Grouped CTA and Controls -->
+            <div
+                class="flex items-center gap-3 md:gap-4 pointer-events-auto glass-panel rounded-full p-2 md:pl-2 md:pr-5">
+                <!-- Contact CTA -->
+                <a href="#contact"
+                    class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-full text-xs md:text-sm font-bold transition-all shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 btn-hover flex items-center gap-1.5 whitespace-nowrap">
+                    <span class="lang-en">Let's Talk</span>
+                    <span class="lang-ee">Räägime lähemalt</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/ken-joela-6613a979/" target="_blank"
-                    class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors"
-                    aria-label="LinkedIn">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                </a>
+
+                <!-- Controls Group -->
+                <div class="flex items-center gap-4">
+                    <div
+                        class="hidden sm:flex items-center gap-3 pr-3 border-r border-slate-300 dark:border-slate-700 transition-colors">
+                        <a href="https://github.com/kjlegacy" target="_blank"
+                            class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors"
+                            aria-label="GitHub">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ken-joela-6613a979/" target="_blank"
+                            class="text-slate-600 dark:text-slate-400 hover:text-brand-500 transition-colors"
+                            aria-label="LinkedIn">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle"
+                        class="font-medium text-sm hover:text-brand-500 transition-colors flex items-center gap-1.5 focus:outline-none"
+                        aria-label="Toggle Language">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span class="lang-en w-5">EE</span>
+                        <span class="lang-ee w-5">EN</span>
+                    </button>
+                    <div class="w-px h-4 bg-slate-300 dark:bg-slate-600 transition-colors"></div>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle"
+                        class="hover:text-brand-500 transition-colors focus:outline-none flex items-center justify-center w-5 h-5"
+                        aria-label="Toggle Dark Mode">
+                        <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+                        <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+                    </button>
+                </div>
             </div>
-            <!-- Language Toggle -->
-            <button id="lang-toggle"
-                class="font-medium text-sm hover:text-brand-500 transition-colors flex items-center gap-1.5 focus:outline-none"
-                aria-label="Toggle Language">
-                <i data-lucide="globe" class="w-4 h-4"></i>
-                <span class="lang-en w-5">EE</span>
-                <span class="lang-ee w-5">EN</span>
-            </button>
-            <div class="w-px h-4 bg-slate-300 dark:bg-slate-600 transition-colors"></div>
-            <!-- Theme Toggle -->
-            <button id="theme-toggle"
-                class="hover:text-brand-500 transition-colors focus:outline-none flex items-center justify-center w-5 h-5"
-                aria-label="Toggle Dark Mode">
-                <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
-                <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
-            </button>
         </div>
     </header>
 
@@ -376,8 +394,8 @@
         <section id="hero"
             class="glass-panel rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal min-h-[50vh]">
             <div class="flex-grow">
-                <div
-                    class="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 text-xs font-bold uppercase tracking-widest w-max border border-brand-200 dark:border-brand-800/50 transition-colors">
+                <a href="#contact"
+                    class="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 text-xs font-bold uppercase tracking-widest w-max border border-brand-200 dark:border-brand-800/50 transition-colors btn-hover">
                     <span class="relative flex h-2 w-2">
                         <span
                             class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
@@ -385,7 +403,7 @@
                     </span>
                     <span class="lang-en">Available for new projects</span>
                     <span class="lang-ee">Avatud uutele projektidele</span>
-                </div>
+                </a>
 
                 <h1
                     class="text-6xl md:text-8xl font-black tracking-tighter mb-6 text-slate-900 dark:text-white transition-colors leading-[1.1]">
@@ -518,113 +536,8 @@
             </div>
         </section>
 
-        <!-- 3. EXPERIENCE SECTION -->
-        <section id="experience" class="reveal">
-            <h3 class="text-4xl font-black mb-12 text-center text-slate-800 dark:text-slate-100 transition-colors">
-                <span class="gradient-text">
-                    <span class="lang-en">Professional Journey</span>
-                    <span class="lang-ee">Töökäik</span>
-                </span>
-            </h3>
 
-            <div
-                class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-700 before:to-transparent">
-
-                <!-- Experience Item 1 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div
-                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-brand-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                        <i data-lucide="briefcase" class="w-5 h-5"></i>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-slate-900 dark:text-white">
-                                <span class="lang-en">Senior Software Engineer</span>
-                                <span class="lang-ee">Vanem-tarkvarainsener</span>
-                            </div>
-                            <time
-                                class="font-mono text-xs font-semibold text-brand-500 uppercase whitespace-nowrap shrink-0">
-                                <span class="lang-en">2016 - Present</span>
-                                <span class="lang-ee">2016 - Käesolev aeg</span>
-                            </time>
-                        </div>
-                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Almic OÜ</div>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                            <span class="lang-en">Architecting and maintaining complex enterprise ecosystems. I
-                                specialize in building high-scale SaaS products, microservices, and robust APIs that
-                                automate critical business processes—from cost management to automated billing. Beyond
-                                coding, I provide strategic tech support and ensure the long-term scalability of diverse
-                                client infrastructures.</span>
-                            <span class="lang-ee">Keeruliste äriprotsesside automatiseerimine ja SaaS-lahenduste
-                                arhitektuur. Minu fookuses on suuremahulised süsteemid: kulude haldus, automaatne
-                                arveldus ja mikroteenused. Lisaks arendustööle pakun tehnilist tuge ja nõustamist
-                                paljudele pikaajalistele klientidele, tagades nende digitaalse edu.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Experience Item 2 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div
-                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                        <i data-lucide="code" class="w-5 h-5"></i>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-slate-900 dark:text-white">
-                                <span class="lang-en">Full-Stack Developer</span>
-                                <span class="lang-ee">Full-stack arendaja</span>
-                            </div>
-                            <time
-                                class="font-mono text-xs font-semibold text-slate-400 uppercase whitespace-nowrap shrink-0">2013
-                                - 2016</time>
-                        </div>
-                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Firzen OÜ</div>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                            <span class="lang-en">The foundational years of rapid growth. I managed the full lifecycle
-                                of web projects—from direct client consultations to deploying custom WordPress solutions
-                                and managing Apache servers. This era was defined by hands-on experimentation,
-                                deep-diving into code through late-night sessions, and mastering the art of building for
-                                the end-user.</span>
-                            <span class="lang-ee">Kiire arengu- ja õpiaeg. Tegelesin veebilahenduste täistsükliga:
-                                alates kliendisuhtlusest kuni WordPressi rätseplahenduste ja serverihalduseeni. Need
-                                aastad möödusid eksperimenteerides ja koodimaailma süvitsi tundma õppides, pannes aluse
-                                minu praegusele professionaalsele kvaliteedile.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Experience Item 3 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div
-                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-slate-900 dark:text-white">
-                                <span class="lang-en">Education: Web & Multimedia Management</span>
-                                <span class="lang-ee">Haridus: Veebitehnoloogiad ja multimeedia</span>
-                            </div>
-                            <time
-                                class="font-mono text-xs font-semibold text-slate-400 uppercase whitespace-nowrap shrink-0">2013
-                                - 2015</time>
-                        </div>
-                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Tallinna Polütehnikum</div>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                            <span class="lang-en">Associate’s Degree. Formalized my passion for web technologies,
-                                focusing on the synergy between technical engineering and multimedia management. This
-                                period laid the groundwork for a decade of continuous, self-driven learning.</span>
-                            <span class="lang-ee">Erialane baasharidus, mis ühendas tehnilise võimekuse ja multimeedia
-                                juhtimise. See oli hüppelaud pidevale enesearendusele, mis on kestnud läbi kogu minu
-                                karjääri.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. SKILLS & TECH -->
+        <!-- 3. SKILLS & TECH -->
         <section id="tech" class="glass-panel rounded-[2rem] p-10 md:p-16 reveal">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div class="lg:col-span-1">
@@ -770,7 +683,7 @@
             </div>
         </section>
 
-        <!-- 5. PROJECTS -->
+        <!-- 4. PROJECTS -->
         <section id="projects" class="reveal">
             <div class="text-center mb-16">
                 <h3 class="text-5xl font-black mb-4 text-slate-800 dark:text-slate-100 transition-colors">
@@ -1453,8 +1366,114 @@
             </div>
         </section>
 
+        <!-- 5. EXPERIENCE SECTION -->
+        <section id="experience" class="reveal">
+            <h3 class="text-4xl font-black mb-12 text-center text-slate-800 dark:text-slate-100 transition-colors">
+                <span class="gradient-text">
+                    <span class="lang-en">Professional Journey</span>
+                    <span class="lang-ee">Töökäik</span>
+                </span>
+            </h3>
+
+            <div
+                class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-700 before:to-transparent">
+
+                <!-- Experience Item 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-brand-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">
+                                <span class="lang-en">Senior Software Engineer</span>
+                                <span class="lang-ee">Vanem-tarkvarainsener</span>
+                            </div>
+                            <time
+                                class="font-mono text-xs font-semibold text-brand-500 uppercase whitespace-nowrap shrink-0">
+                                <span class="lang-en">2016 - Present</span>
+                                <span class="lang-ee">2016 - Käesolev aeg</span>
+                            </time>
+                        </div>
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Almic OÜ</div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Architecting and maintaining complex enterprise ecosystems. I
+                                specialize in building high-scale SaaS products, microservices, and robust APIs that
+                                automate critical business processes—from cost management to automated billing. Beyond
+                                coding, I provide strategic tech support and ensure the long-term scalability of diverse
+                                client infrastructures.</span>
+                            <span class="lang-ee">Keeruliste äriprotsesside automatiseerimine ja SaaS-lahenduste
+                                arhitektuur. Minu fookuses on suuremahulised süsteemid: kulude haldus, automaatne
+                                arveldus ja mikroteenused. Lisaks arendustööle pakun tehnilist tuge ja nõustamist
+                                paljudele pikaajalistele klientidele, tagades nende digitaalse edu.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="code" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">
+                                <span class="lang-en">Full-Stack Developer</span>
+                                <span class="lang-ee">Full-stack arendaja</span>
+                            </div>
+                            <time
+                                class="font-mono text-xs font-semibold text-slate-400 uppercase whitespace-nowrap shrink-0">2013
+                                - 2016</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Firzen OÜ</div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">The foundational years of rapid growth. I managed the full lifecycle
+                                of web projects—from direct client consultations to deploying custom WordPress solutions
+                                and managing Apache servers. This era was defined by hands-on experimentation,
+                                deep-diving into code through late-night sessions, and mastering the art of building for
+                                the end-user.</span>
+                            <span class="lang-ee">Kiire arengu- ja õpiaeg. Tegelesin veebilahenduste täistsükliga:
+                                alates kliendisuhtlusest kuni WordPressi rätseplahenduste ja serverihalduseeni. Need
+                                aastad möödusid eksperimenteerides ja koodimaailma süvitsi tundma õppides, pannes aluse
+                                minu praegusele professionaalsele kvaliteedile.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-900 text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">
+                                <span class="lang-en">Education: Web & Multimedia Management</span>
+                                <span class="lang-ee">Haridus: Veebitehnoloogiad ja multimeedia</span>
+                            </div>
+                            <time
+                                class="font-mono text-xs font-semibold text-slate-400 uppercase whitespace-nowrap shrink-0">2013
+                                - 2015</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-3">Tallinna Polütehnikum</div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Associate’s Degree. Formalized my passion for web technologies,
+                                focusing on the synergy between technical engineering and multimedia management. This
+                                period laid the groundwork for a decade of continuous, self-driven learning.</span>
+                            <span class="lang-ee">Erialane baasharidus, mis ühendas tehnilise võimekuse ja multimeedia
+                                juhtimise. See oli hüppelaud pidevale enesearendusele, mis on kestnud läbi kogu minu
+                                karjääri.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 6. CONTACT -->
-        <section id="contact" class="reveal relative py-16 px-4 md:px-8">
+        <section id="contact" class="reveal relative py-16 md:px-8">
             <div class="max-w-4xl mx-auto">
                 <div class="glass-panel rounded-[3rem] p-10 md:p-16 overflow-hidden relative">
                     <div
@@ -1717,13 +1736,28 @@
 
         // Back to Top Logic
         const backToTopBtn = document.getElementById('back-to-top');
+        const mainHeader = document.getElementById('main-header');
+        let lastScrollTop = 0;
 
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 400) {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Back to Top Button
+            if (scrollTop > 400) {
                 backToTopBtn.classList.add('show');
             } else {
                 backToTopBtn.classList.remove('show');
             }
+
+            // Header Hide/Show Logic
+            if (scrollTop > lastScrollTop && scrollTop > 150) {
+                // Scrolling down - hide header
+                mainHeader.style.transform = 'translateY(-120%)';
+            } else {
+                // Scrolling up - show header
+                mainHeader.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
 
         backToTopBtn.addEventListener('click', () => {

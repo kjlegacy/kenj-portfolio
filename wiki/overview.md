@@ -1,8 +1,8 @@
 ---
 title: Project Overview
-updated: 2026-04-23
+updated: 2026-04-24
 sources: [".agents/README.md", "index.html"]
-source_commit: eee1db3
+source_commit: b47b228
 confidence: high
 ---
 
@@ -25,6 +25,7 @@ This project is a high-end personal portfolio for **Ken Joela**, a Senior Develo
 
 ## Key Features
 
-- **Bilingual Support**: Dynamic language switching between Estonian and English without page reloads.
-- **Visual Excellence**: Bento-grid design, animated gradient headers, dot-grid background patterns, glassmorphism effects, and smooth transitions.
+- **Bilingual Support**: Dynamic language switching between Estonian and English, including form placeholders.
+- **Visual Excellence**: Bento-grid design, animated gradient headers, dot-grid background patterns, glassmorphism effects, and scroll-reveal animations.
+- **Interactivity**: Mobile-friendly project galleries via GLightbox, smooth "Back to Top" navigation, and a functional contact form integrated with Web3Forms.
 - **Living Wiki**: A documentation system that stays in sync with code changes via automated sync operations.
