@@ -2,7 +2,7 @@
 title: Portfolio Module
 updated: 2026-04-24
 sources: ["index.html", "assets/favicon.svg"]
-source_commit: 49df100
+source_commit: 0221cc1
 confidence: high
 ---
 
@@ -18,7 +18,7 @@ The page is built using a **Bento Grid** layout, which organizes information int
 
 | Component | Description |
 |---|---|
-| **Hero Section** | Displays name, senior-level hooks in two languages, and background blobs. |
+| **Hero Section** | Displays name with a minimalist color-cycling animation, senior-level hooks, and background blobs. |
 | **Services** | Highlights core offerings (Web, Mobile, Backend). |
 | **Skills** | Categorized list of technical proficiencies. |
 | **Projects** | Links to featured works with expandable "See More" functionality and GLightbox galleries. |
