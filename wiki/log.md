@@ -43,4 +43,8 @@ All significant changes to the wiki are recorded here.
 ## [2026-04-24] sync | 0 pages updated
 - Changed files: index.html, assets/favicon.svg
 - Pages updated: none
-- Follow-ups: none. Implemented a clean, dark "KJ." monogram favicon in SVG format on a transparent background.
+
+## [2026-04-24] sync | 1 page updated
+- Changed files: index.html
+- Pages updated: modules/portfolio.md
+- Follow-ups: none. Implemented dynamic viewport height (dvh) and safe-area-insets for GLightbox to fix mobile layout issues on iOS.

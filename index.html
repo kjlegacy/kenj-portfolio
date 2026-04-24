@@ -198,6 +198,7 @@
         .glightbox-container {
             -ms-overflow-style: none !important;
             scrollbar-width: none !important;
+            height: 100dvh !important; /* Fix for mobile viewport bars */
         }
 
         .glightbox-container::-webkit-scrollbar,
@@ -206,6 +207,7 @@
         }
 
         .goverlay {
+            height: 100dvh !important; /* Fix for mobile viewport bars */
             background: rgba(248, 250, 252, 0.95) !important;
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -230,7 +232,7 @@
 
         .gslide-image img {
             max-width: 85vw !important;
-            max-height: 85vh !important;
+            max-height: 85dvh !important; /* Use dvh for consistent sizing */
             width: auto !important;
             height: auto !important;
             display: block !important;
@@ -276,6 +278,12 @@
         .dark .gprev:hover,
         .dark .gclose:hover {
             background-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        /* Ensure close button is always reachable and visible on mobile (notches/bars) */
+        .gclose {
+            top: max(20px, env(safe-area-inset-top)) !important;
+            right: max(20px, env(safe-area-inset-right)) !important;
         }
 
         /* Back to Top Button */
