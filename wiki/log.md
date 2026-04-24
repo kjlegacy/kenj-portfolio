@@ -35,3 +35,7 @@ All significant changes to the wiki are recorded here.
 - Follow-ups: none. Documented the new contact form (Web3Forms), back-to-top button, and scroll-reveal system.
 
 
+## [2026-04-24] sync | 2 pages updated
+- Changed files: index.html
+- Pages updated: modules/portfolio.md, overview.md
+- Follow-ups: none. Implemented the smart header with "Let's Talk" CTA, scroll-to-top logo, and scroll-to-hide behavior. Linked hero badge to contact section.

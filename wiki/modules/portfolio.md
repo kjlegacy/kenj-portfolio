@@ -2,7 +2,7 @@
 title: Portfolio Module
 updated: 2026-04-24
 sources: ["index.html"]
-source_commit: b47b228
+source_commit: 7b31846
 confidence: high
 ---
 
@@ -23,6 +23,7 @@ The page is built using a **Bento Grid** layout, which organizes information int
 | **Skills** | Categorized list of technical proficiencies. |
 | **Projects** | Links to featured works with expandable "See More" functionality and GLightbox galleries. |
 | **Contact** | Bilingual contact form with Web3Forms integration and social links. |
+| **Smart Header** | Fixed navigation with logo, CTA, and controls. Hides on scroll down, reappears on scroll up. |
 | **Back to Top** | Floating button for smooth navigation to the hero section. |
 
 ## Features & Implementation
@@ -45,6 +46,7 @@ Tailwind's `dark` class strategy is used.
 - **Glassmorphism**: Accomplished via `backdrop-filter: blur(12px)` and semi-transparent backgrounds.
 - **Animations**: Custom Tailwind animations for floating background blobs (`animate-blob`), section entry transitions, and thumbnail hover interactions.
 - **Scroll Reveal**: Uses a dedicated Intersection Observer-based system (`.reveal` class) for smooth entry animations as the user scrolls.
+- **Smart Sticky Header**: Implements a scroll-direction detection system that hides the navigation bar when scrolling down and reveals it instantly when scrolling up.
 - **Icons**: Dynamic SVG injection using Lucide Icons.
 
 ### 4. Interactive Project Galleries
