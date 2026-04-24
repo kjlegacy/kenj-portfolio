@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Ken Jõela | Senior Website Developer in Estonia | Veebiarendaja</title>
-    <meta name="description"
-        content="Senior software architect and website developer in Estonia with 10 years of experience. Ehitan kaasaegseid ja AI-toega veebilahendusi. Kodulehe tegemine ja täislahendused.">
-    <meta name="keywords"
-        content="website developer estonia, veebiarendaja, kodulehe tegemine, tarkvaraarhitekt, full-stack developer, SEO, web design">
+    <!-- English SEO -->
+    <title class="lang-en">High-Converting Web Development | Lore & Logic</title>
+    <meta class="lang-en" name="description" content="We build lightning-fast, sales-driven websites for growing businesses. Clean code (Logic) meets stunning design (Lore). Get a quote today!">
+
+    <!-- Estonian SEO -->
+    <title class="lang-ee">Kodulehe tegemine, mis toob päringuid | Lore & Logic</title>
+    <meta class="lang-ee" name="description" content="Loome kiireid ja müügile suunatud kodulehti Eesti ettevõtetele. Puhas kood (Logic) ja silmapaistev disain (Lore). Küsi pakkumist ja kasvata oma äri!">
     <meta name="author" content="Ken Jõela">
 
     <!-- Favicons -->
@@ -2372,25 +2374,42 @@
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org/",
-      "@type": "Person",
-      "name": "Ken Jõela",
-      "url": "https://kenjoela.ee",
-      "image": "https://kenjoela.ee/assets/profile/ken_joela.jpg",
-      "jobTitle": "Senior Software Architect & Website Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Almic OÜ"
-      },
-      "alumniOf": "Tallinna Polütehnikum",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tallinn",
-        "addressCountry": "Estonia"
-      },
-      "sameAs": [
-        "https://github.com/kjlegacy",
-        "https://www.linkedin.com/in/ken-joela-6613a979/"
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://kenjoela.eu/#organization",
+          "name": "Lore & Logic OÜ",
+          "url": "https://kenjoela.eu",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "loreandlogic.ou@gmail.com",
+            "contactType": "customer service"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://kenjoela.eu/#person",
+          "name": "Ken Jõela",
+          "jobTitle": "Senior Web Developer & Founder",
+          "worksFor": {
+            "@id": "https://kenjoela.eu/#organization"
+          },
+          "url": "https://kenjoela.eu",
+          "sameAs": [
+            "https://linkedin.com/in/kenjoela",
+            "https://github.com/kjlegacy"
+          ]
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Web Development",
+          "provider": {
+            "@id": "https://kenjoela.eu/#organization"
+          },
+          "areaServed": "EE",
+          "description": "Kodulehtede tegemine, mis on kiired, turvalised ja toovad ettevõttele uusi kliente."
+        }
       ]
     }
     </script>
@@ -2486,24 +2505,14 @@
                 </a>
 
                 <h1
-                    class="text-6xl md:text-8xl font-black tracking-tighter mb-6 text-slate-900 dark:text-white transition-colors leading-[1.1]">
-                    <span class="gradient-text">Ken Jõela</span>
+                    class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6 tracking-tight">
+                    <span class="lang-en">Websites that drive <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">real business growth.</span></span>
+                    <span class="lang-ee">Kodulehed, mis toovad <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">reaalseid päringuid.</span></span>
                 </h1>
 
-                <h2
-                    class="text-2xl md:text-4xl font-semibold text-slate-600 dark:text-slate-300 mb-8 leading-tight transition-colors max-w-2xl">
-                    <span class="lang-en">Senior Software Architect with 10 years of experience building the modern
-                        AI-powered web.</span>
-                    <span class="lang-ee">10-aastase kogemusega tarkvaraarhitekt. Ehitan kaasaegseid ja AI-toega
-                        veebilahendusi.</span>
-                </h2>
-
-                <p class="text-lg text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed transition-colors">
-                    <span class="lang-en">I help businesses scale by delivering high-performance, trustworthy
-                        architecture without the technical complexity. Dedicated father, husband, and tech
-                        minimalist.</span>
-                    <span class="lang-ee">Aitan ettevõtetel kasvada, luues töökindlaid ja skaleeruvaid süsteeme.
-                        Pühendunud isa, abikaasa ja tehnoloogia minimalist.</span>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed font-medium transition-colors">
+                    <span class="lang-en">We blend stunning user experience (Lore) with lightning-fast tech (Logic). Stop losing clients to slow sites—we build digital assets that convert visitors into customers.</span>
+                    <span class="lang-ee">Täiuslik tasakaal disaini (Lore) ja tehnoloogia (Logic) vahel. Unusta aeglased ja keerulised veebilehed – ehitame lahenduse, mis töötab 24/7 sinu ettevõtte kasuks.</span>
                 </p>
             </div>
 
@@ -2589,28 +2598,46 @@
                             <i data-lucide="monitor" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <p class="lang-en">Full-Stack Web Development</p>
-                            <p class="lang-ee">Täislahendusega veebiarendus</p>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                                <span class="lang-en">Sales-Driven Websites</span>
+                                <span class="lang-ee">Müügile suunatud kodulehed</span>
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                <span class="lang-en">Lightning-fast, SEO-optimized websites designed to convert visitors into leads. Clean code meets flawless UX.</span>
+                                <span class="lang-ee">Välkkiired ja SEO-optimeeritud veebilehed, mis muudavad külastajad maksvateks klientideks. Puhas kood ja silmapaistev disain.</span>
+                            </p>
                         </div>
                     </li>
-                    <li class="flex items-center gap-4 group">
+                    <li class="flex items-start gap-4 group">
                         <div
-                            class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform">
+                            class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform shrink-0">
                             <i data-lucide="smartphone" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <p class="lang-en">Mobile App Development</p>
-                            <p class="lang-ee">Mobiilirakenduste arendus</p>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                                <span class="lang-en">Business Process Automation</span>
+                                <span class="lang-ee">Äriprotsesside automatiseerimine</span>
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                <span class="lang-en">Stop wasting time on manual tasks. We build custom integrations and software that do the heavy lifting for you.</span>
+                                <span class="lang-ee">Säästa sadu töötunde. Seome sinu süsteemid ja loome rätseplahendusi, mis teevad rutiinse manuaalse töö sinu eest.</span>
+                            </p>
                         </div>
                     </li>
-                    <li class="flex items-center gap-4 group">
+                    <li class="flex items-start gap-4 group">
                         <div
-                            class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform">
+                            class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 group-hover:scale-110 transition-transform shrink-0">
                             <i data-lucide="cpu" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <p class="lang-en">AI Integration & Automation</p>
-                            <p class="lang-ee">AI liidestused ja automatiseerimine</p>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                                <span class="lang-en">Smart Systems & AI</span>
+                                <span class="lang-ee">Nutikad süsteemid ja AI</span>
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                <span class="lang-en">Future-proof your business. We implement AI solutions and smart tools that give you a definitive competitive edge.</span>
+                                <span class="lang-ee">Toome sinu ettevõttesse tuleviku tehnoloogia. Tehisintellekti lahendused, mis annavad sulle selge konkurentsieelise.</span>
+                            </p>
                         </div>
                     </li>
                 </ul>
@@ -3695,11 +3722,34 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer
-        class="mt-auto py-8 text-center text-sm font-medium text-slate-500 dark:text-slate-500 pointer-events-none transition-colors">
-        <p>&copy; <span id="year"></span> Ken Jõela. <span class="lang-en">All rights reserved.</span><span
-                class="lang-ee">Kõik õigused kaitstud.</span></p>
+        class="mt-auto py-12 text-center text-sm font-medium text-slate-500 dark:text-slate-500 transition-colors">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="mb-8 pointer-events-auto">
+                <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Lore & Logic OÜ</h4>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed max-w-md mx-auto">
+                    <span class="lang-en">Crafting digital success stories by combining thoughtful design (Lore) with
+                        cutting-edge technology (Logic).</span>
+                    <span class="lang-ee">Loome digitaalseid edulugusid, ühendades läbimõeldud disaini (Lore) ja
+                        tipptasemel tehnoloogia (Logic).</span>
+                </p>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-slate-600 dark:text-slate-400">
+                    <p>
+                        <span class="font-medium text-slate-900 dark:text-slate-300">Reg. kood:</span>
+                        17223049
+                    </p>
+                    <p>
+                        <span class="font-medium text-slate-900 dark:text-slate-300">E-post:</span>
+                        <a href="mailto:loreandlogic.ou@gmail.com"
+                            class="hover:text-brand-500 transition-colors">loreandlogic.ou@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-8 pointer-events-none">
+                <p>&copy; <span id="year"></span> Ken Jõela. <span class="lang-en">All rights reserved.</span><span
+                        class="lang-ee">Kõik õigused kaitstud.</span></p>
+            </div>
+        </div>
     </footer>
 
     <!-- GLightbox JS -->
@@ -3758,6 +3808,12 @@
                 document.querySelectorAll('[data-placeholder-en]').forEach(el => {
                     el.placeholder = lang === 'en' ? el.getAttribute('data-placeholder-en') : el.getAttribute('data-placeholder-ee');
                 });
+                
+                // Update Page Title
+                const titleElement = document.querySelector(`title.lang-${lang}`);
+                if (titleElement) {
+                    document.title = titleElement.innerText;
+                }
             }
 
             // Language Detection: Check Local Storage -> Auto-detect (Estonia) -> Default to English
