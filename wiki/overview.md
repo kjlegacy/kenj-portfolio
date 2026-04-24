@@ -2,7 +2,7 @@
 title: Project Overview
 updated: 2026-04-24
 sources: [".agents/README.md", "index.html"]
-source_commit: d80551b
+source_commit: 87b1de3
 confidence: high
 ---
 
